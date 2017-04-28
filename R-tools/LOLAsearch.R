@@ -28,7 +28,11 @@
 
 
 buildRegionDB <- function(collection=list(), filename=list(), description=list(), any=list(),
-                          genome="hg19", rootdir=stop("directory must be specified"), ...) {
+                          genome="hg19", rootdir=stop("directory must be specified", call.=FASLE), ...) {
+    
+    # exit if rootdir is not given
+    force(rootdir)
+  
     require(LOLA)
     require(data.table)
 
